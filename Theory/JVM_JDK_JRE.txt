@@ -1,0 +1,34 @@
+JVM (Java Virtual Machine):
+
+Definition: The JVM is a virtual machine that executes Java bytecode, which is the compiled form of Java source code. It abstracts the underlying hardware and operating system, allowing Java programs to be platform-independent.
+
+Role: The primary role of the JVM is to execute Java applications. It loads bytecode, interprets it, and manages memory, garbage collection, and thread execution. The JVM ensures that Java programs can run on any platform with a compatible JVM implementation.
+
+Key Features:
+
+Platform Independence: JVMs are available for various platforms (Windows, Linux, macOS, etc.), allowing Java programs to run on these platforms without modification.
+Just-In-Time (JIT) Compilation: Many JVMs use JIT compilation to improve performance. They translate bytecode into native machine code on the fly, making Java applications run faster over time.
+Garbage Collection: The JVM automatically manages memory by reclaiming objects that are no longer in use, preventing memory leaks.
+Examples: Popular JVM implementations include Oracle HotSpot, OpenJ9, and GraalVM.
+
+JRE (Java Runtime Environment):
+
+Definition: The JRE is a software package that includes the JVM along with essential libraries and components required to run Java applications. It does not include development tools such as compilers.
+
+Role: The JRE is necessary for running Java applications. When you want to run a compiled Java program, you only need to have the JRE installed on your system.
+
+Components: The JRE includes the JVM, Java core classes (Java API), class libraries, and other runtime-related files and configurations.
+
+Usage: End-users who want to run Java applications, such as desktop software or web applets, typically need the JRE installed on their computers.
+
+JDK (Java Development Kit):
+
+Definition: The JDK is a software package that includes the JRE, development tools, and utilities necessary for developing Java applications.
+
+Role: The primary role of the JDK is to provide everything developers need to create, compile, and package Java applications. It includes the Java compiler (javac), debugger, libraries, documentation, and other development utilities.
+
+Components: The JDK consists of the JRE, development tools, API documentation, and header files for native libraries (for Java Native Interface - JNI).
+
+Usage: Developers who write, compile, and package Java applications use the JDK for their work. It is essential for creating Java software.
+
+In summary, the JVM is responsible for executing Java applications, the JRE is needed to run Java applications, and the JDK is used for developing Java applications. When you write Java code, you typically use the JDK for development, and when you distribute your Java applications, end-users need the JRE to run them. The JVM, which is part of both the JRE and JDK, is responsible for executing Java bytecode.

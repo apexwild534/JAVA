@@ -1,0 +1,44 @@
+Interface
+
+
+
+In Java, an interface is a core concept of object-oriented programming (OOP) that defines a contract or a set of abstract methods that must be implemented by any class that claims to implement the interface. It allows for multiple inheritance of method signatures, as a class can implement multiple interfaces. Interfaces are a way to achieve abstraction and provide a mechanism for establishing common behavior across unrelated classes.
+
+Here are key points and concepts related to interfaces in Java:
+
+Declaration of an Interface:
+
+An interface is declared using the interface keyword, followed by the interface's name.
+Interfaces can contain method declarations (without method bodies), constant variables (implicitly public, static, and final), and nested types (e.g., other interfaces or classes).
+
+Implementing an Interface:
+
+To use an interface, a class must implement it using the implements keyword.
+A class that implements an interface must provide concrete (non-abstract) implementations for all the methods declared in the interface.
+
+
+Multiple Interface Implementation:
+
+A class can implement multiple interfaces by separating the interface names with commas.
+This allows a class to inherit and provide implementations for multiple sets of behavior defined in different interfaces.
+
+
+Default and Static Methods:
+
+In Java 8 and later, interfaces can include default and static methods that provide method implementations.
+Default methods have the default keyword and allow interfaces to add new methods without breaking existing implementing classes.
+Static methods have the static keyword and are called on the interface itself, not on instances of implementing classes.
+
+
+Purpose of Interfaces:
+
+Interfaces are used to define a contract for classes to follow, ensuring that they provide specific behavior.
+They promote code reusability and flexibility by allowing unrelated classes to share a common set of methods.
+Interfaces are commonly used for defining callbacks, creating API contracts, and achieving polymorphism.
+Functional Interfaces: A functional interface is a special type of interface that contains exactly one abstract method. Functional interfaces can be used with lambda expressions, making them useful for defining inline implementations of single-method interfaces.
+
+
+
+Marker Interfaces: Marker interfaces are empty interfaces without any method declarations. They are used to indicate a certain capability or quality of a class. Examples include Serializable and Cloneable.
+
+Interfaces play a crucial role in Java's support for abstraction, encapsulation, and polymorphism. They allow for the creation of flexible and extensible software by specifying a contract that classes must adhere to while providing implementations in a decoupled manner.

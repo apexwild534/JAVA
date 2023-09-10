@@ -1,0 +1,49 @@
+Garbage Collection
+
+
+Garbage collection is a critical automatic memory management feature in Java (and many other programming languages) that helps developers manage memory efficiently and avoid memory leaks. The primary purpose of garbage collection is to automatically reclaim memory that is no longer in use, making it available for future allocation.
+
+Here are key points to understand about garbage collection in Java:
+
+Automatic Memory Management: In Java, memory allocation and deallocation are handled automatically by the Java Virtual Machine (JVM). Developers do not need to explicitly allocate or deallocate memory as they do in languages like C or C++.
+
+Heap Memory: In Java, objects are allocated memory on the heap, which is a region of memory reserved for runtime data storage. The heap is where most objects are created and managed.
+
+References: Objects in Java are not deleted as soon as they become unreachable. Instead, the JVM uses references to track which objects are still in use. An object is considered eligible for garbage collection when there are no references pointing to it.
+
+Garbage Collector: The JVM includes a garbage collector that runs in the background, periodically identifying and removing objects that are no longer reachable. The specific garbage collection algorithm used may vary between JVM implementations.
+
+finalize Method: In earlier versions of Java, you could use the finalize method to specify custom cleanup actions for an object before it is garbage collected. However, this method is now deprecated in favor of more modern techniques, such as the try-with-resources statement for resource management.
+
+Manual Memory Management: While Java's garbage collection automates memory management for most objects, developers may still need to manage resources explicitly, such as closing files, sockets, or database connections. In such cases, the try-with-resources statement is often used to ensure proper resource cleanup.
+
+Here's an example of how garbage collection works in Java:
+
+public class GarbageCollectionExample {
+    public static void main(String[] args) {
+        // Creating objects
+        SomeObject obj1 = new SomeObject();
+        SomeObject obj2 = new SomeObject();
+
+        // Making obj1 eligible for garbage collection
+        obj1 = null;
+
+        // At this point, obj1 is no longer reachable,
+        // so it becomes eligible for garbage collection
+
+        // ... Perform some other operations ...
+
+        // The garbage collector may run at some point
+        // and reclaim the memory occupied by obj1
+    }
+}
+
+class SomeObject {
+    // Class definition
+}
+
+
+In the example above, obj1 becomes eligible for garbage collection after setting it to null because there are no longer any references pointing to it. The JVM's garbage collector will eventually identify and reclaim the memory occupied by obj1.
+
+Java's garbage collection mechanism helps prevent memory leaks by automatically releasing memory resources that are no longer needed, making Java programs more robust and reliable. Developers can focus on application logic and not worry about low-level memory management tasks.
+

@@ -1,0 +1,75 @@
+File Reader
+
+
+In Java, FileReader is a class provided by the java.io package that allows you to read character data from a file. It's part of the input stream classes and is commonly used for reading text files and processing their contents as character data.
+
+Here's how you can use FileReader to read data from a file:
+
+Import the Required Class:
+Import the FileReader class at the beginning of your Java file.
+
+
+import java.io.FileReader;
+
+
+Create a FileReader Object:
+Create an instance of the FileReader class and pass the file's path as a parameter to the constructor.
+
+try (FileReader fileReader = new FileReader("input.txt")) {
+    // File reading code
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+Read Data from the File:
+You can read character data from the file using various methods provided by FileReader. Some commonly used methods include:
+
+int read(): Reads a single character from the file and returns it as an integer (Unicode value) or -1 if the end of the file is reached.
+
+int read(char[] buffer): Reads up to buffer.length characters from the file and stores them in the buffer array. Returns the number of characters read or -1 if the end of the file is reached.
+
+Here's an example of reading character data from a file using FileReader:
+
+try (FileReader fileReader = new FileReader("input.txt")) {
+    int charRead;
+    while ((charRead = fileReader.read()) != -1) {
+        // Process the character read
+        System.out.print((char) charRead);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+Close the FileReader:
+It's essential to close the FileReader when you're done with it to release system resources. You can use the try-with-resources statement to ensure the stream is closed automatically when the block is exited.
+
+
+try (FileReader fileReader = new FileReader("input.txt")) {
+    // File reading code
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+
+Remember to handle potential exceptions, such as IOException, which can occur during file operations.
+
+If you want to read text data from a file more efficiently and perform operations like reading lines or working with character encodings, you can wrap FileReader in a BufferedReader. Here's an example of reading lines from a file using FileReader and BufferedReader:
+
+
+
+try (FileReader fileReader = new FileReader("input.txt");
+     BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+    String line;
+    while ((line = bufferedReader.readLine()) != null) {
+        // Process the line read
+        System.out.println(line);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+This approach is often preferred for reading text files because it provides better performance and additional functionality for working with text data.

@@ -1,0 +1,104 @@
+DECLARATIONS
+
+
+In Java, declarations are used to introduce and define various program elements, including variables, methods, classes, interfaces, and more. Here are some common types of declarations in Java:
+
+Variable Declarations:
+
+Variable Declaration: To declare a variable, you specify its data type, followed by the variable's name. For example:
+
+int x;
+
+
+Variable Initialization: You can also initialize a variable at the time of declaration:
+
+int y = 42;
+
+
+
+Method Declarations:
+
+Method Declaration: To declare a method, you specify its return type, name, and a parameter list (if any). For example:
+
+public int add(int a, int b) {
+    return a + b;
+}
+
+
+Class Declarations:
+
+Class Declaration: In Java, classes are declared using the class keyword. A class declaration specifies the class name and its members (fields and methods). For example:
+
+
+public class MyClass {
+    // Class members go here
+}
+
+
+
+Interface Declarations:
+
+Interface Declaration: Interfaces are declared using the interface keyword. An interface declaration specifies the interface name and its method signatures. For example:
+
+public interface MyInterface {
+    void doSomething();
+}
+
+
+Enumeration Declarations:
+
+Enum Declaration: Enumerations are declared using the enum keyword. An enum declaration specifies the enum name and its constants. For example:
+
+public enum DaysOfWeek {
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+}
+
+Constructor Declarations:
+
+Constructor Declaration: Constructors are special methods used to initialize objects. They are declared with the same name as the class and have no return type. For example:
+
+public MyClass() {
+    // Constructor code here
+}
+
+
+Package Declarations:
+
+Package Declaration: A package declaration specifies the package to which a class belongs. It is placed at the top of the source file. For example:
+
+
+package com.example.myapp;
+
+
+
+Static Block Declarations:
+
+Static Block Declaration: A static block is used for static initialization of a class and is executed when the class is loaded. It is declared within a class using the static keyword and a pair of curly braces. For example:
+
+
+static {
+    // Static initialization code here
+}
+
+
+Inner Class Declarations:
+
+Inner Class Declaration: Java allows you to define classes within other classes. These inner classes are declared inside the enclosing class. For example:
+
+
+public class OuterClass {
+    class InnerClass {
+        // Inner class members here
+    }
+}
+
+
+Lambda Expressions:
+
+Lambda Expression Declaration: In Java 8 and later, you can declare lambda expressions, which are used to represent anonymous functions. Lambda expressions are typically used when working with functional interfaces. For example:
+
+
+(a, b) -> a + b
+
+
+These are some of the common types of declarations in Java. Proper use of declarations is essential for defining the structure and behavior of Java programs and ensuring that they are correctly compiled and executed.

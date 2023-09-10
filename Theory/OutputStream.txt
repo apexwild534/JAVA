@@ -1,0 +1,52 @@
+OUTPUT STREAM
+
+
+In Java, an output stream is a fundamental abstraction provided by the java.io package that allows you to write data to various output destinations, such as files, network connections, or in-memory buffers. Output streams provide a consistent way to output data, regardless of the destination.
+
+The key characteristics and concepts related to output streams in Java include:
+
+OutputStream Class: OutputStream is an abstract class in the java.io package, which serves as the base class for all output stream classes. It defines several methods for writing data, including write(int), write(byte[]), and write(byte[], int, int).
+
+Subclasses of OutputStream: Java provides various concrete subclasses of OutputStream for writing data to specific destinations. Some common subclasses include:
+
+FileOutputStream: Writes data to a file.
+ByteArrayOutputStream: Writes data to an in-memory byte array.
+BufferedOutputStream: Wraps another OutputStream to provide buffered writing, improving performance.
+DataOutputStream: Writes primitive data types (e.g., int, float) to an underlying stream.
+ObjectOutputStream: Writes Java objects to an underlying stream, often used for serialization.
+Writing Data: You can use methods like write(int), write(byte[]), and write(byte[], int, int) to write data to the output stream. These methods take integer values representing bytes or byte arrays.
+
+
+OutputStream outputStream = new FileOutputStream("example.txt");
+byte[] data = "Hello, World!".getBytes();
+outputStream.write(data);
+outputStream.close();
+
+
+
+Flushing and Closing the Stream: It's important to flush and close the output stream using the flush() and close() methods when you're done with it. Flushing ensures that any buffered data is written to the underlying destination.
+
+
+outputStream.flush();
+outputStream.close();
+
+
+Exception Handling: Writing to an output stream can throw IOException (a checked exception), so it's essential to handle potential exceptions using try-catch blocks or propagate them to the calling method.
+
+
+try {
+    // Write to the output stream
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+Buffering: For improved performance, especially when writing to slow or network destinations, you can wrap an output stream in a BufferedOutputStream. This class uses an internal buffer to reduce the number of direct write operations to the destination.
+
+
+OutputStream outputStream = new FileOutputStream("largefile.txt");
+BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream);
+
+
+
+Output streams are a fundamental part of Java I/O and are used extensively when dealing with data output to various destinations. They provide a unified way to write data regardless of the destination, making it easier to work with files, network sockets, and other output channels in a consistent manner.

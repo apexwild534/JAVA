@@ -1,0 +1,27 @@
+Control Structures
+
+Control structures in Java are programming constructs that enable you to control the flow of your code's execution. They allow you to make decisions, loop through code blocks, and execute statements conditionally or repetitively. Java provides several control structures, including:
+
+Conditional Statements:
+
+if Statement: The if statement is used for making decisions in your code based on a condition. If the condition is true, a block of code is executed; otherwise, it's skipped.
+
+switch Statement: The switch statement allows you to select one of several code blocks to execute based on the value of an expression.
+
+Loops:
+
+for Loop: The for loop is used for executing a block of code repeatedly for a specified number of times.
+
+while Loop: The while loop executes a block of code repeatedly as long as a specified condition is true.
+
+do-while Loop: The do-while loop is similar to the while loop but guarantees that the code block is executed at least once before checking the condition.
+
+Control Statements:
+
+break Statement: The break statement is used to exit a loop or switch statement prematurely. It is often used to terminate a loop when a certain condition is met.
+
+continue Statement: The continue statement is used to skip the current iteration of a loop and continue with the next iteration. It's often used to skip specific iterations based on a condition.
+
+Exception Handling:
+
+Java provides a set of control structures for handling exceptions, including try, catch, finally, and throw. These constructs allow you to handle runtime errors and exceptions gracefully.

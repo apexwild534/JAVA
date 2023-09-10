@@ -1,0 +1,97 @@
+MULTI-THREADING
+
+
+
+Multithreading is a programming technique that allows a program to execute multiple threads (smaller units of a program's execution) concurrently. In Java, multithreading is supported by the java.lang.Thread class and the java.lang.Runnable interface. Multithreading is especially useful in scenarios where you want to perform multiple tasks simultaneously or make efficient use of modern multicore processors. Here's how to work with multithreading in Java:
+
+Create a Runnable Object:
+
+Start by defining a class that implements the Runnable interface. This interface requires you to override the run() method, where you place the code for the task you want the thread to perform.
+
+public class MyRunnable implements Runnable {
+    @Override
+    public void run() {
+        // Code for the task to be performed by the thread
+    }
+}
+
+
+Create Thread Objects:
+
+Next, create instances of the Thread class and pass your Runnable object as an argument to the Thread constructor.
+
+
+MyRunnable myRunnable = new MyRunnable();
+Thread thread1 = new Thread(myRunnable);
+Thread thread2 = new Thread(myRunnable);
+
+
+Start the Threads:
+
+Use the start() method of the Thread class to initiate the execution of your threads. This method transitions the thread from the "New" state to the "Runnable" state, and the run() method of your Runnable object is executed concurrently.
+
+
+
+thread1.start();
+thread2.start();
+
+
+Thread Execution:
+
+Each thread will execute the run() method independently. You can have multiple threads performing different tasks concurrently.
+Wait for Threads to Finish (Optional):
+
+If you want to wait for a thread to finish its execution before continuing with the main thread, you can use the join() method. This method waits until the specified thread completes.
+
+
+try {
+    thread1.join();
+    thread2.join();
+} catch (InterruptedException e) {
+    // Handle exceptions
+}
+
+
+Thread Management:
+
+You can manage threads using methods like sleep(), yield(), interrupt(), and setPriority(), as discussed in previous responses.
+Here's a complete example:
+
+
+public class MultiThreadExample {
+    public static void main(String[] args) {
+        // Create a Runnable object
+        Runnable myRunnable = () -> {
+            for (int i = 1; i <= 5; i++) {
+                System.out.println("Thread " + Thread.currentThread().getId() + ": " + i);
+                try {
+                    Thread.sleep(1000); // Sleep for 1 second
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt(); // Restore interrupted status
+                }
+            }
+        };
+
+        // Create thread objects and start them
+        Thread thread1 = new Thread(myRunnable);
+        Thread thread2 = new Thread(myRunnable);
+        thread1.start();
+        thread2.start();
+
+        // Wait for threads to finish
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            // Handle exceptions
+        }
+
+        System.out.println("Main thread finished.");
+    }
+}
+
+
+
+In this example, two threads are created and started to execute the same Runnable task concurrently. The main thread waits for both threads to finish using the join() method before printing "Main thread finished."
+
+Remember that proper synchronization and coordination may be required when multiple threads access shared resources or perform complex interactions to avoid issues like race conditions or deadlocks.

@@ -1,0 +1,37 @@
+LIFE CYCLE OF A THREAD
+
+
+
+In Java, a thread goes through several states in its lifecycle, from creation to termination. Understanding the thread lifecycle is crucial for effective multithreaded programming. Here are the various states in the lifecycle of a Java thread:
+
+New (or Born) State:
+
+A thread enters the "New" state when it is created but has not yet been started using the start() method of the Thread class or by other means. In this state, the thread is not yet running.
+Runnable State:
+
+After calling the start() method, the thread moves to the "Runnable" state. In this state, the thread is eligible to run, but it may or may not be currently executing because the thread scheduler has not yet selected it for execution.
+Threads in the "Runnable" state can be executed by the CPU, but the actual execution depends on the thread scheduler's decisions.
+Running State:
+
+When a thread is selected by the thread scheduler for execution, it enters the "Running" state. In this state, the thread's run() method is actively executing, and it consumes CPU time.
+A running thread can transition back to the "Runnable" state due to time-slicing, thread yields, or other scheduling events.
+Blocked (or Waiting) State:
+
+A thread may transition to the "Blocked" state when it is temporarily inactive and cannot proceed with its execution. Common reasons for entering this state include waiting for I/O operations, acquiring locks, or waiting for certain conditions to be met.
+Threads in the "Blocked" state will not execute until they transition back to the "Runnable" state.
+Timed Waiting State:
+
+Threads can enter the "Timed Waiting" state when they are waiting for a specified period of time. This can happen when a thread invokes methods like Thread.sleep(), Object.wait(), or Thread.join() with a timeout.
+The thread will automatically transition back to the "Runnable" state when the specified time period elapses or when the condition it is waiting for is met.
+Terminated (or Dead) State:
+
+A thread enters the "Terminated" state when its run() method completes or when an unhandled exception occurs within the thread. Once in this state, the thread cannot be restarted.
+Threads in the "Terminated" state are no longer eligible for execution.
+The transitions between these states are managed by the Java Virtual Machine (JVM) and the underlying operating system's thread scheduler. Developers can influence thread behavior and synchronization through techniques like synchronization, locks, and thread coordination mechanisms.
+
+Here's a simplified representation of the thread lifecycle:
+
+New -> Runnable -> Running -> (Back to Runnable) -> Blocked -> (Back to Runnable) -> Timed Waiting -> (Back to Runnable) -> Terminated
+
+
+It's important to handle thread synchronization and coordination properly to avoid issues like race conditions, deadlocks, and excessive resource contention. Understanding the thread lifecycle helps in designing robust multithreaded applications.

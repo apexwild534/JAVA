@@ -1,0 +1,4 @@
+Default
+
+
+In the context of constructors, a "default constructor" is a constructor that is provided by the Java compiler if a class does not define any constructors explicitly. The default constructor takes no arguments and performs no special initialization.

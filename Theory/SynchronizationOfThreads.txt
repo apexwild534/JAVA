@@ -1,0 +1,106 @@
+SYNCHRONIZATION OF THREADS
+
+
+Synchronization in Java is a technique that ensures that multiple threads can safely access shared resources without causing data corruption or inconsistencies. It prevents race conditions and ensures that only one thread can access a synchronized block of code or method at a time. In Java, synchronization can be achieved using the synchronized keyword, locks, and various synchronization mechanisms provided by the java.util.concurrent package. Here are common ways to synchronize threads:
+
+Synchronized Methods:
+
+You can use the synchronized keyword to declare a method as synchronized. When a thread calls a synchronized method, it must acquire a lock on the object associated with that method before executing it. Other threads that attempt to call the same synchronized method will be blocked until the lock is released.
+
+
+public synchronized void synchronizedMethod() {
+    // Synchronized method code
+}
+
+
+
+
+Synchronized Blocks:
+
+Instead of synchronizing entire methods, you can use synchronized blocks to protect specific sections of code. This allows more fine-grained control over synchronization.
+
+synchronized (lockObject) {
+    // Synchronized code block
+}
+
+
+
+
+Static Synchronization:
+
+You can apply synchronization to static methods and blocks using the static keyword.
+
+
+public static synchronized void staticSynchronizedMethod() {
+    // Static synchronized method code
+}
+
+
+
+Reentrant Locks:
+
+The java.util.concurrent.locks.ReentrantLock class provides a flexible way to achieve synchronization. It allows for more advanced control over locking, including features like timeouts and condition variables.
+
+
+
+import java.util.concurrent.locks.ReentrantLock;
+
+private final ReentrantLock lock = new ReentrantLock();
+
+public void someMethod() {
+    lock.lock(); // Acquire the lock
+    try {
+        // Synchronized code
+    } finally {
+        lock.unlock(); // Release the lock
+    }
+}
+
+
+
+
+Read-Write Locks:
+
+The java.util.concurrent.locks.ReentrantReadWriteLock class provides separate locks for reading and writing. Multiple threads can read data simultaneously, but only one thread can write at a time.
+
+
+
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+private final ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
+
+public void readData() {
+    rwLock.readLock().lock(); // Acquire read lock
+    try {
+        // Read data
+    } finally {
+        rwLock.readLock().unlock(); // Release read lock
+    }
+}
+
+public void writeData() {
+    rwLock.writeLock().lock(); // Acquire write lock
+    try {
+        // Write data
+    } finally {
+        rwLock.writeLock().unlock(); // Release write lock
+    }
+}
+
+
+
+
+
+Synchronized Collections:
+
+Java provides synchronized versions of collections in the java.util package, such as Collections.synchronizedList(), Collections.synchronizedMap(), etc. These collections ensure thread-safe access to their elements.
+
+
+List<String> synchronizedList = Collections.synchronizedList(new ArrayList<>());
+
+
+
+Semaphore and CountDownLatch:
+
+Classes like java.util.concurrent.Semaphore and java.util.concurrent.CountDownLatch allow you to control the flow of threads by blocking or releasing threads based on certain conditions or signals.
+Remember that improper synchronization can lead to deadlocks and performance issues, so it's important to design and test multithreaded code carefully. Proper synchronization ensures that threads cooperate effectively and safely when accessing shared resources.

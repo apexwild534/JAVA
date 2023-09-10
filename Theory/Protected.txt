@@ -1,0 +1,56 @@
+PROTECTED
+
+
+In Java, the protected access modifier is one of the four main access modifiers used to control the visibility and accessibility of class members (fields and methods). When a member is marked as protected, it has restricted visibility and can be accessed within the same package as well as by subclasses, regardless of whether the subclass is in the same package or a different one. Here are the key characteristics and use cases of protected access:
+
+Visibility within the Same Package:
+
+protected members are visible to all classes within the same package. This means that any class in the same package can access protected members.
+
+Visibility in Subclasses:
+
+protected members are also visible to subclasses, even if the subclasses are in different packages. This is one of the main distinctions between protected and default (package-private) access.
+
+Encapsulation and Inheritance:
+
+The protected access modifier is often used in scenarios where you want to provide access to class members for the purpose of inheritance. It allows subclasses to inherit and access these members while still encapsulating them from classes outside the package.
+
+
+Example:
+
+
+package com.example;
+
+public class Animal {
+    protected String name; // Protected field
+
+    protected void makeSound() { // Protected method
+        System.out.println("Animal makes a sound");
+    }
+}
+
+
+In this example, the name field and the makeSound() method are marked as protected. They are accessible to classes within the com.example package and can also be accessed by subclasses, even if those subclasses are in different packages.
+
+Use in Inheritance:
+
+protected members are often used in the context of inheritance when you want to provide subclasses with controlled access to superclass members. Subclasses can override protected methods and access protected fields.
+
+package com.example;
+
+public class Dog extends Animal {
+    public void greet() {
+        System.out.println("Dog named " + name + " says hello!");
+        makeSound(); // Accessing protected method
+    }
+}
+
+
+In this example, the Dog class is a subclass of Animal and can access the name field and makeSound() method because they are marked as protected in the Animal class.
+
+Package and Subclass Scope:
+
+To summarize, protected members have a wider scope than private members (which are only accessible within the same class) but narrower than public members (which are accessible from anywhere). They strike a balance between encapsulation and providing access to subclasses and classes within the same package.
+
+
+Use the protected access modifier when you want to allow subclasses to access and potentially override certain members of a superclass, while still encapsulating those members from classes outside the package. It is particularly useful in building extensible and maintainable class hierarchies.

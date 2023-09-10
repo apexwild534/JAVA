@@ -1,0 +1,32 @@
+Exception Handling
+
+
+Exception handling in Java is a mechanism that allows you to gracefully handle unexpected or exceptional situations that may occur during program execution. Exceptions are events or conditions that can disrupt the normal flow of a program, such as division by zero, file not found, or network errors. Handling exceptions ensures that your program can respond to these situations and recover gracefully.
+
+Here are the key components and concepts of exception handling in Java:
+
+Exception Classes:
+
+Java provides a hierarchy of exception classes that are derived from the Throwable class. The two main types of exceptions are:
+Checked Exceptions: These exceptions must be either caught and handled or declared using the throws clause in a method signature. Examples include IOException and SQLException.
+Unchecked Exceptions (Runtime Exceptions): These exceptions do not need to be explicitly caught or declared. They usually indicate programming errors or unexpected runtime conditions. Examples include NullPointerException and ArithmeticException.
+
+try-catch Blocks:
+
+You use try and catch blocks to handle exceptions. The try block contains the code that might throw an exception, and the catch block contains code to handle the exception if it occurs.
+
+finally Block:
+
+The finally block is optional and follows a try-catch block. It contains code that is executed regardless of whether an exception is thrown or not. This block is often used for resource cleanup.
+
+Throwing Exceptions:
+
+You can use the throw keyword to explicitly throw an exception in your code. This is useful for indicating exceptional conditions.
+
+When defining a method, you can use the throws clause in the method signature to declare that the method may throw certain exceptions. This informs callers of the method about the exceptions they need to handle or propagate.
+
+Custom Exceptions:
+
+You can create your own custom exception classes by extending existing exception classes or by creating new ones. Custom exceptions allow you to handle specific application-related errors.
+
+Exception handling is an essential part of writing robust and reliable Java programs. It helps prevent unexpected crashes and allows your code to respond gracefully to errors, improving the overall reliability of your software. Properly handling exceptions also aids in debugging and maintenance efforts.

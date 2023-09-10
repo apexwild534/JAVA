@@ -1,0 +1,8 @@
+De-Constructors
+
+
+In Java, there is no concept of a "destructor" as you would find in languages like C++. Java relies on a garbage collection mechanism to automatically manage memory and clean up objects when they are no longer referenced and become unreachable. This means that you don't need to explicitly destroy or deallocate objects as you would in languages with destructors.
+
+
+
+REFER TO GarbageCollection.txt for more information

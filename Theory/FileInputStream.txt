@@ -1,0 +1,69 @@
+File Input Stream
+
+
+In Java, FileInputStream is a class provided by the java.io package that allows you to read binary data from a file. It's part of the input stream classes and is commonly used for reading files that contain binary data, such as images, audio, video, or any other non-textual data.
+
+Here's how you can use FileInputStream to read data from a file:
+
+Import the Required Class:
+Import the FileInputStream class at the beginning of your Java file.
+
+
+import java.io.FileInputStream;
+
+
+
+Create a FileInputStream Object:
+Create an instance of the FileInputStream class and pass the file's path as a parameter to the constructor.
+
+
+try (FileInputStream inputStream = new FileInputStream("example.bin")) {
+    // File reading code
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+Read Data from the File:
+You can read data from the file using various methods provided by FileInputStream. Some commonly used methods include:
+
+int read(): Reads a single byte from the file and returns it as an integer value (0 to 255) or -1 if the end of the file is reached.
+
+int read(byte[] buffer): Reads up to buffer.length bytes from the file and stores them in the buffer array. Returns the number of bytes read or -1 if the end of the file is reached.
+
+
+try (FileInputStream inputStream = new FileInputStream("example.bin")) {
+    int byteRead;
+    while ((byteRead = inputStream.read()) != -1) {
+        // Process the byte read
+        System.out.println(byteRead);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+
+Close the FileInputStream:
+It's essential to close the FileInputStream when you're done with it to release system resources. You can use the try-with-resources statement to ensure the stream is closed automatically when the block is exited.
+
+
+try (FileInputStream inputStream = new FileInputStream("example.bin")) {
+    // File reading code
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+Remember to handle potential exceptions, such as IOException, which can occur during file operations. Additionally, you can wrap FileInputStream in a BufferedInputStream for more efficient reading when dealing with larger files.
+
+
+try (FileInputStream fileInputStream = new FileInputStream("largefile.bin");
+     BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream)) {
+    // Read data from the buffered input stream
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+FileInputStream is suitable for reading binary data from files, but if you need to read text data from a file, consider using FileReader in combination with BufferedReader for more convenient text handling.

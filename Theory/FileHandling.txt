@@ -1,0 +1,91 @@
+File handling in Java involves reading from and writing to files using various input and output classes provided by the java.io package. Java offers a rich set of classes and methods for performing file-related operations. Here are the basic steps involved in file handling:
+
+Import the Required Classes:
+You need to import the necessary classes from the java.io package to work with files. Commonly used classes include File, FileInputStream, FileOutputStream, BufferedReader, BufferedWriter, and more.
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+
+File Input (Reading from a File):
+
+File Reading with FileInputStream:
+You can use FileInputStream to read binary data from a file.
+
+
+try (FileInputStream inputStream = new FileInputStream("example.txt")) {
+    int byteRead;
+    while ((byteRead = inputStream.read()) != -1) {
+        // Process the byte read
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+File Reading with FileReader and BufferedReader:
+For reading text data from a file, it's common to use FileReader in combination with BufferedReader for efficiency.
+
+try (FileReader fileReader = new FileReader("example.txt");
+     BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+    String line;
+    while ((line = bufferedReader.readLine()) != null) {
+        // Process the line read
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+File Output (Writing to a File):
+
+File Writing with FileOutputStream:
+You can use FileOutputStream to write binary data to a file.
+
+try (FileOutputStream outputStream = new FileOutputStream("output.txt")) {
+    byte[] data = "Hello, World!".getBytes();
+    outputStream.write(data);
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+File Writing with FileWriter and BufferedWriter:
+For writing text data to a file, you can use FileWriter in combination with BufferedWriter.
+
+
+try (FileWriter fileWriter = new FileWriter("output.txt");
+     BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+    String text = "Hello, World!";
+    bufferedWriter.write(text);
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+Error Handling:
+When working with files, it's essential to handle exceptions properly, as file operations can result in exceptions, such as IOException. Proper error handling ensures that your program can respond gracefully to potential issues.
+
+
+try {
+    // File operations
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+Closing Resources:
+To ensure that resources like file streams are properly closed after use, you can use the try-with-resources statement. This feature was introduced in Java 7 and automatically closes the resources when they are no longer needed.
+
+
+try (FileInputStream inputStream = new FileInputStream("example.txt")) {
+    // File reading code
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+
+These are the basic steps involved in file handling in Java. You can perform more advanced file operations, such as file copying, directory manipulation, and reading/writing complex data structures, using various Java I/O classes and libraries.

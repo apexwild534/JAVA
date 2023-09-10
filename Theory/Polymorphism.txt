@@ -1,0 +1,64 @@
+POLYMORPHISM
+
+
+
+Polymorphism is one of the four fundamental principles of object-oriented programming (OOP), along with encapsulation, inheritance, and abstraction.
+
+It refers to the idea that a variable, function, or object can have more than one form. The word polymorphism comes from Greek and means "having multiple forms".
+
+ Polymorphism allows objects of different classes to be treated as objects of a common superclass. It enables you to write more flexible and reusable code by promoting code extensibility and adaptability. There are two main types of polymorphism in Java: compile-time (or static) polymorphism and runtime (or dynamic) polymorphism.
+
+1. Compile-Time Polymorphism (Static Polymorphism):
+
+Compile-time polymorphism occurs when the method to be invoked is determined at compile time, based on the method signature (name and parameter types). It is also known as method overloading. Key characteristics of compile-time polymorphism include:
+
+Method Overloading: In Java, you can define multiple methods in the same class with the same name but different parameter lists (different in terms of the number or types of parameters). The appropriate method to call is determined by the arguments passed during method invocation.
+
+
+class MathOperations {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+
+
+Determination at Compile Time: The compiler determines which overloaded method to call based on the method signature and the arguments passed. This is also called static binding.
+
+2. Runtime Polymorphism (Dynamic Polymorphism):
+
+Runtime polymorphism occurs when the method to be invoked is determined at runtime, based on the actual type of the object. It is achieved through method overriding. Key characteristics of runtime polymorphism include:
+
+Method Overriding: In Java, a subclass can provide a specific implementation for a method that is already defined in its superclass. The method in the subclass must have the same name, return type, and parameter list as the method in the superclass.
+
+
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+
+
+Determination at Runtime: The method to be invoked is determined at runtime based on the actual type of the object that the reference points to. This is also called dynamic binding or late binding.
+
+Polymorphic Behavior: With runtime polymorphism, you can create a reference to the superclass and assign it an object of the subclass. When you call a method on that reference, the appropriate method in the subclass is executed, providing polymorphic behavior.
+
+
+Animal myPet = new Dog(); // Polymorphic assignment
+myPet.makeSound(); // Calls Dog's makeSound() method
+
+
+Polymorphism is a powerful concept that allows you to write more flexible and extensible code. It simplifies code maintenance and promotes code reuse, as you can create code that works with objects of various types as long as they share a common interface or superclass.
+

@@ -1,0 +1,97 @@
+JAVA PROGRAM COMPILATION AND EXECUTION
+
+
+
+IN NOTEPAD(or any plain text editor)
+
+Write Your Java Code:
+Open Notepad and write your Java code. Ensure that the code has the .java file extension and follows proper Java syntax. For example, you can create a simple "Hello, World!" program as follows:
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+
+
+Save the File:
+Save the file with a .java extension. Choose a descriptive name for your Java file, and make sure that the "Save as type" field is set to "All Files" in Notepad. For example, you can save it as HelloWorld.java.
+
+Open Command Prompt (Terminal):
+You'll need to use the command prompt (Windows) or terminal (macOS/Linux) to compile and run the Java program.
+
+Navigate to the Directory:
+Use the cd command to navigate to the directory where your Java file is saved. For example, if your file is on the desktop, you can navigate to it using the cd Desktop command.
+
+Compile the Java Program:
+To compile your Java program, use the javac command followed by the name of your Java file. For example:
+
+javac HelloWorld.java
+
+
+This will generate a bytecode file with the .class extension in the same directory.
+
+Run the Java Program:
+After compiling successfully, you can run the Java program using the java command followed by the name of the class (without the .class extension). For example:
+
+java HelloWorld
+
+
+You should see the output of your program in the command prompt or terminal, which in this case will be "Hello, World!".
+
+That's it! You've successfully compiled and executed a Java program using Notepad and the command prompt/terminal. Make sure that you have the Java Development Kit (JDK) installed on your system, as it provides the necessary tools (javac and java) for compiling and running Java programs.
+
+
+
+
+
+IN IDE
+
+
+Running and compiling a Java program in an Integrated Development Environment (IDE) is generally more convenient and user-friendly compared to using a simple text editor and the command line. Here are the general steps to compile and execute a Java program in an IDE, using Eclipse as an example:
+
+Note: The specific steps may vary slightly depending on the IDE you are using (e.g., IntelliJ IDEA, NetBeans), but the core process remains similar.
+
+Install an IDE:
+If you haven't already, download and install an IDE like Eclipse, IntelliJ IDEA, or NetBeans. You can find the official websites for these IDEs and follow their installation instructions.
+
+Open or Create a Java Project:
+Launch your IDE and open an existing Java project or create a new one. Most IDEs provide options to create a new Java project.
+
+Create a Java Class:
+Inside your Java project, create a new Java class where you'll write your Java code. Right-click on the src folder (or a package if you've created one) and select "New" > "Class" (or "Java Class").
+
+Write Your Java Code:
+In the newly created class, write your Java code. For example, create a "Hello, World!" program:
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+
+
+Save Your Code:
+Save your Java file. Most IDEs automatically save your changes as you type.
+
+Compile and Run:
+
+Eclipse: To compile and run your program in Eclipse, you can simply right-click on the Java file in the "Package Explorer" and select "Run As" > "Java Application." Eclipse will compile your code and execute it, displaying the output in the "Console" view at the bottom.
+
+IntelliJ IDEA: In IntelliJ IDEA, you can click the green "Run" button in the gutter next to your main method (or right-click and select "Run 'YourClassName.main()'"). You'll see the output in the "Run" or "Debug" window at the bottom.
+
+NetBeans: In NetBeans, right-click on your Java file in the "Projects" tab and select "Run File." The output will be displayed in the "Output" window.
+
+View the Output:
+You should see the output of your program in the console or output window, which typically appears at the bottom of the IDE.
+
+Debugging (Optional):
+IDEs provide debugging tools that allow you to set breakpoints, inspect variables, and step through your code to find and fix issues.
+
+Save Your Project:
+Make sure to save your project and code changes regularly.
+
+Exit the IDE:
+When you're finished working, you can exit the IDE.
+
+Using an IDE provides a more interactive and streamlined development experience for Java programming, making it easier to write, test, and debug your code. It also provides features like code completion, error highlighting, and project management to enhance your productivity.

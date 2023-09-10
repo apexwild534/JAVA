@@ -1,0 +1,16 @@
+Dynamic Method Dispatch
+
+
+Dynamic method dispatch, also known as runtime polymorphism or late binding, is a fundamental concept in object-oriented programming languages like Java. It allows a subclass to provide a specific implementation of a method that is already defined in its superclass. The choice of which method implementation to execute is made at runtime, depending on the actual object type.
+
+Here's how dynamic method dispatch works in Java:
+
+Inheritance Hierarchy: Dynamic method dispatch requires a class hierarchy, where a subclass inherits from a superclass. The superclass contains a method that can be overridden by the subclass.
+
+Method Overriding: In the subclass, you override the method from the superclass by providing a new implementation with the @Override annotation. The method signature (name, return type, and parameters) must be the same as in the superclass.
+
+Polymorphic Reference: You create a reference variable of the superclass type and assign an object of the subclass to it. This allows you to treat the subclass object as an instance of the superclass.
+
+Method Invocation: You can call the overridden method using the reference variable. The actual method implementation that gets executed depends on the runtime type of the object assigned to the reference variable.
+
+Dynamic method dispatch is a powerful mechanism for achieving polymorphism in Java, allowing you to write flexible and extensible code that can work with objects of different classes in a unified manner.

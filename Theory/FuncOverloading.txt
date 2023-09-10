@@ -1,0 +1,98 @@
+Function Overloading
+
+
+
+Function overloading, also known as method overloading, is a feature in Java (and many other programming languages) that allows you to define multiple methods in the same class with the same name but with different parameter lists. The method or function to be executed is determined at compile time based on the number or types of arguments passed when the method is called.
+
+Key points about function overloading in Java:
+
+Method Signature: In Java, function overloading is determined by the method's signature, which includes the method name and the parameter list. The return type is not considered when determining overloading.
+
+Parameter Lists: Overloaded methods must have different parameter lists. This can involve differences in the number of parameters, parameter types, or both.
+
+Return Type: Overloaded methods can have the same or different return types. However, the return type alone does not differentiate overloaded methods.
+
+
+Here's an example of function overloading in Java:
+
+public class Calculator {
+    // Method to add two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method to add two doubles
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    // Method to concatenate two strings
+    public String add(String a, String b) {
+        return a + b;
+    }
+
+    // Method to add three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+
+
+
+Function overloading, also known as method overloading, is a feature in Java (and many other programming languages) that allows you to define multiple methods in the same class with the same name but with different parameter lists. The method or function to be executed is determined at compile time based on the number or types of arguments passed when the method is called.
+
+Key points about function overloading in Java:
+
+Method Signature: In Java, function overloading is determined by the method's signature, which includes the method name and the parameter list. The return type is not considered when determining overloading.
+
+Parameter Lists: Overloaded methods must have different parameter lists. This can involve differences in the number of parameters, parameter types, or both.
+
+Return Type: Overloaded methods can have the same or different return types. However, the return type alone does not differentiate overloaded methods.
+
+Here's an example of function overloading in Java:
+
+java
+Copy code
+public class Calculator {
+    // Method to add two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method to add two doubles
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    // Method to concatenate two strings
+    public String add(String a, String b) {
+        return a + b;
+    }
+
+    // Method to add three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+In the example above, the Calculator class defines multiple add methods with different parameter lists:
+
+add(int a, int b) takes two integer parameters.
+add(double a, double b) takes two double parameters.
+add(String a, String b) takes two String parameters.
+add(int a, int b, int c) takes three integer parameters.
+These methods are considered overloaded because they share the same name ("add") but have different parameter lists.
+
+Function overloading is commonly used to provide convenience to the users of a class by allowing them to use the same method name for operations that are conceptually similar but have different input types. The compiler determines which method to call based on the arguments passed in a specific method invocation.
+
+For example:
+
+
+Calculator calculator = new Calculator();
+int sumInt = calculator.add(5, 10); // Calls add(int a, int b)
+double sumDouble = calculator.add(3.5, 2.5); // Calls add(double a, double b)
+String combinedString = calculator.add("Hello, ", "World!"); // Calls add(String a, String b)
+int sumThreeInt = calculator.add(2, 4, 6); // Calls add(int a, int b, int c)
+
+
+In each case, the appropriate overloaded method is called based on the argument types and the number of arguments provided.

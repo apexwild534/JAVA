@@ -1,0 +1,78 @@
+THREADS
+
+
+In Java, "threads" are the smallest units of a program's execution. They allow a program to execute multiple tasks concurrently or in parallel, making it possible to perform multiple operations simultaneously. Java provides built-in support for multithreading through the java.lang.Thread class and the java.lang.Runnable interface. Here are the key concepts related to threads in Java:
+
+Thread Class:
+
+The java.lang.Thread class is the core class for working with threads in Java. You can create and manipulate threads using this class.
+To create a new thread, you can either extend the Thread class or implement the Runnable interface.
+Runnable Interface:
+
+The java.lang.Runnable interface represents a task that can be executed by a thread. It defines a single abstract method, run(), which contains the code to be executed by the thread.
+Implementing the Runnable interface is a common way to define the behavior of a thread.
+Thread Creation:
+
+You can create a thread by instantiating the Thread class and passing a Runnable object to its constructor. Alternatively, you can create a subclass of Thread and override its run() method.
+
+Example of creating a thread using a Runnable:
+
+Runnable myRunnable = () -> {
+    // Thread's task goes here
+};
+Thread thread = new Thread(myRunnable);
+
+
+Thread Execution:
+
+Once a thread is created, you can start it using the start() method. The JVM will execute the run() method of the thread's Runnable or the overridden run() method in the new thread.
+
+Example of starting a thread:
+
+thread.start();
+
+
+Thread States:
+
+Threads in Java can be in various states, including "New," "Runnable," "Blocked," "Waiting," and "Terminated." The Thread class provides methods for querying and managing thread states.
+Thread Synchronization:
+
+In multithreaded applications, it's often necessary to synchronize access to shared resources to avoid race conditions and data corruption. Java provides mechanisms like synchronized blocks and locks for this purpose.
+Thread Priorities:
+
+Threads can be assigned priorities using the setPriority() method. Higher-priority threads are given preference by the thread scheduler, but the exact behavior may vary between different JVM implementations.
+Thread Termination:
+
+Threads can be terminated using the interrupt() method or by allowing their run() method to complete naturally. It's important to handle thread termination gracefully to avoid resource leaks.
+Thread Groups (Deprecated):
+
+Java used to have a concept of thread groups to group threads for management purposes. However, thread groups are now considered deprecated, and other mechanisms should be used for thread management.
+Concurrency Utilities:
+
+Java provides a rich set of concurrency utilities in the java.util.concurrent package, including thread pools, locks, semaphores, and more, to simplify concurrent programming and improve performance.
+Daemon Threads:
+
+Threads can be marked as daemon threads, which are automatically terminated when all non-daemon threads have completed. Daemon threads are often used for background tasks like garbage collection.
+Here's a simple example of creating and starting a thread in Java:
+
+
+public class MyThreadExample {
+    public static void main(String[] args) {
+        Runnable myRunnable = () -> {
+            for (int i = 1; i <= 5; i++) {
+                System.out.println("Thread: " + i);
+                try {
+                    Thread.sleep(1000); // Sleep for 1 second
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt(); // Restore interrupted status
+                }
+            }
+        };
+
+        Thread thread = new Thread(myRunnable);
+        thread.start(); // Start the thread
+    }
+}
+
+
+This program creates a new thread that prints numbers from 1 to 5 with a one-second delay between each number. Threads allow you to perform tasks concurrently, enhancing the efficiency and responsiveness of your Java applications.

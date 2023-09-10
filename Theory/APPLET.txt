@@ -1,0 +1,28 @@
+APPLET
+
+A Java applet is a small Java program that is typically embedded within a web page and executed by a web browser with Java support enabled. Applets were popular in the early days of the internet for adding interactive content to web pages, but they have largely been deprecated in favor of other web technologies like JavaScript and HTML5. Despite this, it's still useful to understand what applets are and how they work.
+
+Here are some key points about Java applets:
+
+Embedded in Web Pages: Applets are embedded in HTML pages using the <applet> or <object> tag. The applet code is downloaded from the web server and executed within the Java Virtual Machine (JVM) running inside the web browser.
+
+Java Code: Applets are written in Java and can make use of the entire Java API. This allows developers to create interactive and dynamic content within web pages.
+
+Applet Life Cycle: Applets have a well-defined life cycle, including methods like init(), start(), stop(), and destroy(). These methods are called by the web browser at different points in the applet's execution.
+
+Security Restrictions: Due to security concerns, modern web browsers have restricted or disabled support for Java applets. They are considered a security risk because they can execute arbitrary code on a user's machine, potentially leading to security vulnerabilities.
+
+Deployment: To run an applet, users typically need to have Java Runtime Environment (JRE) installed on their machines. Additionally, the applet's JAR (Java Archive) files need to be hosted on a web server.
+
+Applet Tags: Here's an example of how an applet is embedded in an HTML page using the <applet> tag:
+
+
+<applet code="MyApplet.class" width="300" height="200">
+    <!-- Optional parameters go here -->
+</applet>
+
+Alternatives: Given the decline in applet usage, modern web development often relies on other technologies like JavaScript, HTML5, and CSS for creating interactive web content. These technologies provide better cross-browser compatibility and security.
+
+Applet Deprecated: Java applets have been deprecated and are not supported in many web browsers, including popular ones like Chrome and Firefox. Oracle, the company behind Java, has also deprecated the Applet API in recent Java versions.
+
+While Java applets played a significant role in web development in the past, they are now considered obsolete and are rarely used. Developers are encouraged to explore more modern web technologies when creating interactive web applications.

@@ -1,0 +1,42 @@
+Data Types
+
+
+In Java, data types specify the type of data that a variable can hold. Java has two categories of data types: primitive data types and reference data types.
+
+1. Primitive Data Types:
+
+Primitive data types are the most basic data types in Java. They represent single values and do not have methods or properties. There are eight primitive data types in Java:
+
+byte: 8-bit integer values. Range: -128 to 127.
+short: 16-bit integer values. Range: -32,768 to 32,767.
+int: 32-bit integer values. Range: -2^31 to 2^31-1.
+long: 64-bit integer values. Range: -2^63 to 2^63-1.
+float: 32-bit floating-point values. Useful for representing approximate real numbers.
+double: 64-bit floating-point values. Used for representing real numbers with higher precision.
+char: 16-bit Unicode characters. Represents a single character.
+boolean: Represents true or false values.
+
+2. Reference Data Types:
+
+Reference data types are more complex and are used to reference objects. They do not store the actual data but store references (memory addresses) to objects. Some common reference data types include:
+
+Objects: Instances of classes.
+Arrays: Ordered collections of elements of the same data type.
+
+
+3. String Data Type:
+
+Although String is a reference data type, it is often used as if it were a primitive data type because of its widespread use. In Java, strings are immutable, meaning their values cannot be changed after they are created.
+
+4. Type Casting:
+
+Java supports both implicit and explicit type casting (also known as type conversion) between compatible data types. For example, you can implicitly cast a byte to an int, but you need to explicitly cast an int to a byte if it might exceed the byte's range.
+
+
+
+Understanding and choosing the appropriate data types is essential for memory efficiency and program correctness when working in Java. Primitive data types are generally more memory-efficient but have limited range and precision, while reference data types provide flexibility and support for complex data structures.
+
+
+
+
+Understanding and choosing the appropriate data types is essential for memory efficiency and program correctness when working in Java. Primitive data types are generally more memory-efficient but have limited range and precision, while reference data types provide flexibility and support for complex data structures.

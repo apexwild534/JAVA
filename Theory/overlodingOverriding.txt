@@ -1,0 +1,78 @@
+OVERLOADING V/S OVERRIDING
+
+
+Overloading and overriding are two important concepts in object-oriented programming (OOP), particularly in Java. They involve the use of methods in classes and inheritance, but they serve different purposes and have distinct characteristics. Let's explore the differences between overloading and overriding:
+
+Method Overloading:
+
+Definition: Method overloading refers to defining multiple methods in a class with the same name but different parameters. These methods can have different numbers or types of parameters, but they must have unique method signatures based on the parameters.
+
+Characteristics:
+
+Overloaded methods are part of the same class.
+Overloading is determined at compile time, and the appropriate method to call is selected based on the number and types of arguments passed during method invocation (static polymorphism or compile-time polymorphism).
+The return type of overloaded methods can be the same or different.
+Overloaded methods may or may not have a relationship with the methods they overload; they can be entirely unrelated in terms of functionality.
+Example:
+
+class MathOperations {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+
+Method Overriding:
+
+Definition: Method overriding occurs in a subclass when a method with the same name, return type, and parameter list as a method in its superclass is defined. The purpose is to provide a specific implementation for that method in the subclass.
+
+Characteristics:
+
+Overridden methods are part of a superclass, and they are redefined in a subclass.
+Overriding is determined at runtime, and the appropriate method to call is based on the actual object's type (dynamic polymorphism or runtime polymorphism).
+The return type and method signature of overridden methods must be the same in the superclass and the subclass.
+Overridden methods represent a specific implementation of a more general method defined in the superclass, promoting code reusability and extensibility.
+Example:
+
+
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+
+Summary of Differences:
+
+Purpose:
+
+Overloading is used to define multiple methods with the same name but different parameters in a single class.
+Overriding is used to provide a specific implementation of a method in a subclass that has the same name and parameters as a method in the superclass.
+Involvement of Classes:
+
+Overloading involves a single class with multiple methods.
+Overriding involves a superclass-subclass relationship.
+Resolution Time:
+
+Overloading is resolved at compile time (static).
+Overriding is resolved at runtime (dynamic).
+Method Signature:
+
+Overloading allows methods with the same name but different signatures (parameters).
+Overriding requires the same method signature in both the superclass and subclass.
+Inheritance:
+
+Overloading does not necessarily involve inheritance.
+Overriding always involves inheritance and represents a part of the IS-A relationship.
+Both overloading and overriding are important concepts in OOP, and they serve different purposes. Overloading provides flexibility in method parameterization within a class, while overriding allows you to provide specialized implementations of methods in subclasses, promoting code extensibility and polymorphism.

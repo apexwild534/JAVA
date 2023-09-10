@@ -1,0 +1,35 @@
+Character Stream
+
+
+Character streams in Java are used for reading and writing character data. Unlike byte streams, which deal with raw bytes, character streams are designed to work with textual data. They handle character encoding and decoding, making them suitable for reading and writing text files, which can contain characters from various character sets, such as UTF-8 or UTF-16.
+
+There are two main abstract classes in Java for handling character streams: Reader for reading and Writer for writing.
+
+Here are some key points about character streams:
+
+Reader:
+
+Reader is an abstract class that serves as the superclass for various input character stream classes.
+It is used for reading characters from different sources, such as files, network sockets, or in-memory character arrays.
+Writer:
+
+Writer is an abstract class that serves as the superclass for various output character stream classes.
+It is used for writing characters to different destinations, such as files, network sockets, or in-memory character arrays.
+Common Character Stream Classes:
+
+Some commonly used character stream classes include FileReader, FileWriter, BufferedReader, BufferedWriter, InputStreamReader, OutputStreamWriter, and CharArrayReader.
+Character Encoding:
+
+Character streams handle character encoding and decoding automatically, ensuring that characters are correctly converted to and from bytes according to the specified character set.
+Textual Data:
+
+Character streams are ideal for reading and writing text files, which contain textual data in various languages and character encodings.
+Reading and Writing Characters:
+
+To read characters from a Reader, you typically use methods like read() to read a single character or read(char[]) to read a buffer of characters.
+To write characters to a Writer, you use methods like write(int) to write a single character or write(char[]) to write a buffer of characters.
+Exception Handling:
+
+When working with character streams, you should handle exceptions like IOException to deal with potential errors during input/output operations.
+
+Character streams are essential for working with text-based data in Java. They handle character encoding and decoding, making it easier to work with text files in different languages and character sets.

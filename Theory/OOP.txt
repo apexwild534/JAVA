@@ -1,0 +1,40 @@
+OOP
+
+
+Object-Oriented Programming (OOP) is a programming paradigm that uses objects and classes as the fundamental building blocks of software development. It is a way of organizing and designing code to promote reusability, modularity, and maintainability. OOP is based on several core principles and concepts:
+
+Objects:
+
+An object is a self-contained unit that represents a real-world entity or concept.
+Objects encapsulate data (attributes or properties) and behavior (methods or functions) that operate on the data.
+For example, in a banking application, an "Account" object could encapsulate attributes like account number, balance, and account holder's name, along with methods like deposit, withdraw, and transfer.
+Classes:
+
+A class is a blueprint or template for creating objects of a particular type.
+It defines the structure (attributes) and behavior (methods) that its objects will have.
+Classes serve as a blueprint for creating multiple objects with similar characteristics and behaviors.
+For example, a "Car" class can define the structure and behavior common to all cars, and individual car objects can be created from this class.
+Encapsulation:
+
+Encapsulation is the concept of bundling data (attributes) and the methods (behavior) that operate on that data into a single unit (class).
+It hides the internal details of how a class works, exposing only the necessary interfaces to interact with objects.
+Access to the internal state of an object is controlled through access modifiers like public, private, and protected.
+Inheritance:
+
+Inheritance is a mechanism that allows a new class (subclass or derived class) to inherit properties and behavior from an existing class (superclass or base class).
+It promotes code reuse by allowing you to create new classes based on existing ones, inheriting their attributes and methods.
+Subclasses can also add new attributes and methods or override inherited ones.
+For example, a "SavingsAccount" class can inherit from the "Account" class, inheriting its balance and deposit method, while adding specific features like interest rate calculation.
+Polymorphism:
+
+Polymorphism allows objects of different classes to be treated as objects of a common superclass.
+It enables the flexibility to use objects interchangeably based on their shared interface (e.g., method names) while executing the appropriate behavior for each object.
+Polymorphism is often achieved through method overriding and interfaces.
+For example, you can create a list of different shapes (circles, rectangles) that all have a common "calculateArea" method, and the correct method is called at runtime based on the specific shape.
+Abstraction:
+
+Abstraction is the process of simplifying complex systems by breaking them into smaller, manageable parts.
+It hides unnecessary details while exposing essential features.
+Classes in OOP are a form of abstraction, as they allow you to model real-world entities with just the necessary attributes and methods.
+Abstraction helps manage complexity and enhances code understandability.
+OOP promotes modular, reusable, and maintainable code by modeling software as a collection of interacting objects. It is widely used in software development and is supported by many programming languages, including Java, C++, Python, and C#. By adhering to OOP principles, developers can create well-structured, organized, and adaptable software systems.

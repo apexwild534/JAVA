@@ -1,0 +1,90 @@
+STATIC
+
+
+In Java, the static keyword is used to declare members (fields or methods) that belong to the class rather than to individual instances (objects) of the class. When a member is marked as static, it means that there is only one instance of that member shared among all instances of the class, and it can be accessed using the class name rather than an object reference. Here are the key uses and characteristics of static members in Java:
+
+Static Fields (Class Variables):
+
+Static fields, also known as class variables, are shared among all instances of the class. They are declared using the static keyword.
+Static fields are typically used for values or properties that are common to all instances of the class and do not vary from object to object.
+
+
+public class MyClass {
+    static int staticField = 10;
+
+    // ...
+}
+
+
+Static Methods:
+
+Static methods, also known as class methods, are associated with the class itself rather than with individual objects. They are declared using the static keyword.
+Static methods can be called using the class name and do not require an instance of the class.
+
+public class MathUtils {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    // ...
+}
+
+
+
+Static Initialization Blocks:
+
+Static initialization blocks are used to initialize static fields or perform one-time setup for the class.
+They are executed when the class is loaded and before any static methods or fields are accessed.
+
+
+
+public class MyClass {
+    static {
+        // Static initialization code
+    }
+
+    // ...
+}
+
+
+
+Accessing Static Members:
+
+Static members can be accessed using the class name, followed by a dot (.) and the member name.
+They can also be accessed using an object reference, but this is generally discouraged, as it may lead to confusion.
+
+
+int value = MyClass.staticField; // Accessing static field
+int result = MathUtils.add(5, 3); // Calling static method
+
+
+
+Shared Data: Static fields are shared among all instances of a class. Changing the value of a static field in one instance will affect all other instances.
+
+Common Use Cases:
+
+static methods are often used for utility methods that do not require access to instance-specific data.
+static fields can be used for constants, counters, or shared configuration settings.
+Static members are frequently used to create factory methods for creating instances of a class.
+Thread Safety: Be cautious when using static fields in a multi-threaded environment, as they are shared across threads. Proper synchronization may be needed to ensure thread safety.
+
+No this Reference: Inside a static method or block, you cannot use the this keyword because there is no instance associated with the method. this refers to an instance, and static members belong to the class itself.
+
+
+public class MyClass {
+    int instanceField;
+    static int staticField;
+
+    public void instanceMethod() {
+        // You can use 'this' here to refer to the instance
+        int value = this.instanceField;
+    }
+
+    public static void staticMethod() {
+        // Cannot use 'this' here; it is not associated with any instance
+        // int value = this.instanceField; // Compilation error
+    }
+}
+
+
+In summary, static members in Java are associated with the class rather than instances and are shared among all objects of the class. They are commonly used for utility methods, constants, and shared data that do not vary from object to object. Understanding the use of static is crucial for writing efficient and organized Java code.

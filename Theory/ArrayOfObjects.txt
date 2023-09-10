@@ -1,0 +1,43 @@
+Array of Objects in Java:
+
+An array of objects in Java is an array where each element of the array is an object of a class or a reference to an object. It allows you to store multiple instances of objects of the same class in a single array. Here are the key points to understand about arrays of objects:
+
+Array Declaration and Initialization:
+
+To declare an array of objects, you specify the class type followed by square brackets, like this:
+
+ClassName[] arrayName;
+
+
+To create an array and allocate memory for a specific number of objects, you use the new keyword:
+
+
+ClassName[] arrayName = new ClassName[size];
+
+
+
+Creating Objects for the Array:
+
+After declaring an array of objects, you need to create objects for each element in the array. 
+To initialize each element with an object, you can use a loop or individually assign objects to array elements.
+
+Accessing Objects in the Array:
+
+You can access individual objects in the array using the array index (0-based).
+
+
+Iterating Over an Array of Objects:
+
+You can use loops, such as for or foreach, to iterate over an array of objects and perform operations on each object.
+
+
+Array Length:
+
+You can obtain the length of an array (the number of elements it can hold) using the length attribute of the array.
+
+
+
+Array of Objects vs. Primitive Arrays:
+
+An array of objects can store instances of any class or subclass, making it versatile for handling different types of objects.
+Primitive arrays (e.g., int[], double[]) can only store primitive data types and cannot hold objects.

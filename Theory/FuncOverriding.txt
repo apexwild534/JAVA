@@ -1,0 +1,58 @@
+Function Overriding
+
+
+Function overriding is a fundamental concept in object-oriented programming that allows a subclass to provide a specific implementation of a method that is already defined in its superclass. In Java, function overriding is commonly used to achieve polymorphism, where the same method name behaves differently depending on the object's actual type at runtime.
+
+Here are the key points to understand about function overriding in Java:
+
+Inheritance Relationship: Function overriding occurs in the context of inheritance, where you have a superclass (or parent class) and a subclass (or child class). The subclass inherits methods and fields from the superclass.
+
+Method Signature: To override a method in the subclass, the method in the superclass and the subclass must have the same method signature. The method signature includes the method name, the number of parameters, and their types. The return type can be the same or a subtype of the return type in the superclass.
+
+Annotations: In Java, you can use the @Override annotation to explicitly indicate that a method in the subclass is intended to override a method in the superclass. While not required, this annotation helps catch errors at compile time if there's a mismatch in method signatures.
+
+Access Modifiers: An overriding method in the subclass cannot have a more restrictive access modifier than the overridden method in the superclass. It can, however, have a less restrictive access modifier.
+
+Exception Handling: An overriding method in the subclass can throw the same exceptions as the overridden method in the superclass or subclasses of those exceptions. It cannot throw broader exceptions or different exceptions.
+
+Here's an example of function overriding in Java:
+
+
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        Animal myCat = new Cat();
+
+        myDog.makeSound(); // Calls Dog's makeSound method
+        myCat.makeSound(); // Calls Cat's makeSound method
+    }
+}
+
+
+In this example:
+
+The Animal class has a makeSound method.
+The Dog class and Cat class are subclasses of Animal and both override the makeSound method.
+In the main method, we create instances of Dog and Cat but store them in variables of type Animal. When we call makeSound on these variables, the overridden method in the respective subclass is executed.
+This demonstrates the concept of dynamic method dispatch, where the method to be executed is determined at runtime based on the actual type of the object, allowing for polymorphic behavior.
+

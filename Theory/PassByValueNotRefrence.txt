@@ -1,0 +1,41 @@
+Pass By Value Not Reference
+
+
+In Java, all arguments to methods are passed by value, not by reference. This means that when you pass an argument (e.g., an object) to a method, you are passing a copy of the value of the reference to that object, not the actual reference itself. Understanding this concept is essential for working with Java objects effectively.
+
+Here's a breakdown of how Java handles method arguments:
+
+Pass by Value: Java is strictly "pass-by-value." When you pass an argument to a method, a copy of the argument's value (which is a reference in the case of objects) is passed to the method. This copy is a new reference pointing to the same object in memory. Changes made to the copy inside the method do not affect the original reference outside the method.
+
+Objects and References:
+
+In Java, objects reside in the heap memory, while references (also known as pointers) are used to access those objects.
+When you pass an object as an argument to a method, you are passing a copy of the reference (pointer) to the object, not the object itself.
+Effect on Mutability: If the object being referred to is mutable (i.e., its internal state can be modified), changes made to the object's state inside the method are reflected outside the method because both the original reference and the copy point to the same object.
+
+Example:
+
+class Person {
+    String name;
+
+    Person(String name) {
+        this.name = name;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person person = new Person("Alice");
+        modifyPerson(person);
+        System.out.println(person.name); // Output: Bob
+    }
+
+    static void modifyPerson(Person p) {
+        p.name = "Bob"; // Modifies the object referred to by 'p'
+    }
+}
+
+
+In the example above, the modifyPerson method takes a reference to a Person object and modifies its name attribute. Since both the person reference in main and the p reference in modifyPerson point to the same object, the change to the name attribute is reflected in the output.
+
+In summary, Java is pass-by-value, but when you pass objects as arguments, you are passing references to those objects by value. This means that you can modify the state of an object within a method and have those changes visible outside the method, but you cannot change the reference itself (e.g., making it point to a different object) in the calling method using this approach.

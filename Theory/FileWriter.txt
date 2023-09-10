@@ -1,0 +1,72 @@
+File Writer
+
+
+In Java, FileWriter is a class provided by the java.io package that allows you to write character data to a file. It's part of the output stream classes and is commonly used for creating and writing text files. Here's how you can use FileWriter to write data to a file:
+
+Import the Required Class:
+Import the FileWriter class at the beginning of your Java file.
+
+import java.io.FileWriter;
+
+
+Create a FileWriter Object:
+Create an instance of the FileWriter class and pass the file's path as a parameter to the constructor. You can also specify whether you want to append data to an existing file or overwrite it by using the appropriate constructor.
+
+try (FileWriter fileWriter = new FileWriter("output.txt")) {
+    // File writing code
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+To append data to an existing file, you can use the constructor with an additional boolean parameter set to true.
+
+try (FileWriter fileWriter = new FileWriter("existingfile.txt", true)) {
+    // Appending data to the existing file
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+Write Data to the File:
+You can write character data to the file using various methods provided by FileWriter. Some commonly used methods include:
+
+void write(int c): Writes a single character to the file.
+
+void write(char[] cbuf): Writes the entire contents of the character array to the file.
+
+void write(String str): Writes the entire string to the file.
+
+Here's an example of writing character data to a file using FileWriter:
+
+try (FileWriter fileWriter = new FileWriter("output.txt")) {
+    String data = "Hello, World!";
+    fileWriter.write(data);
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+Close the FileWriter:
+It's essential to close the FileWriter when you're done with it to ensure that all data is flushed to the file and to release system resources. You can use the try-with-resources statement to automatically close the stream when the block is exited.
+
+try (FileWriter fileWriter = new FileWriter("output.txt")) {
+    // File writing code
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+Remember to handle potential exceptions, such as IOException, which can occur during file operations. Additionally, you can wrap FileWriter in a BufferedWriter for more efficient writing when dealing with larger files.
+
+
+try (FileWriter fileWriter = new FileWriter("largefile.txt");
+     BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+    // Write data to the buffered writer
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+
+Using FileWriter in combination with BufferedWriter is a common approach for writing text data to files because it provides better performance and additional functionality for working with text data, such as writing lines and handling character encodings.

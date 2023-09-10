@@ -1,0 +1,55 @@
+STREAMS
+
+
+In Java, streams are a powerful and flexible way to process sequences of elements, such as collections of data or input/output operations. Introduced in Java 8 as part of the Stream API, they provide a functional-style approach to working with data. Streams allow for concise, expressive, and efficient operations on data, making code more readable and maintainable.
+
+Here are some key points about streams:
+
+Sequence of Elements: A stream represents a sequence of elements and provides a set of operations to perform transformations, filtering, and reduction on those elements.
+
+Functional Programming Paradigm: Streams are designed to be used in a functional programming style, where operations are expressed as a series of transformations on the data.
+
+Lazy Evaluation: Stream operations are evaluated on demand. This means that intermediate operations (like filtering or mapping) do not process elements until a terminal operation (like collect() or forEach()) is called.
+
+Immutability and Non-Mutability: Streams do not modify the original data source. Instead, they create new streams with the transformed data, leaving the original source intact.
+
+Intermediate and Terminal Operations:
+
+Intermediate Operations: These are operations that return a new stream. They include operations like filter(), map(), sorted(), and distinct().
+Terminal Operations: These are operations that consume the stream and produce a result. They include operations like collect(), forEach(), reduce(), and count().
+Source of Streams: Streams can be created from various sources, including collections, arrays, I/O operations, and other sources.
+
+Common Operations:
+
+Filtering: Filtering operations, like filter(Predicate), allow you to select elements based on a condition.
+Mapping: Mapping operations, like map(Function), allow you to transform elements into a different type.
+Reducing: Reducing operations, like reduce(BinaryOperator), combine elements to produce a single result.
+Collecting: Collecting operations, like collect(Collector), allow you to accumulate elements into a collection or produce other types of results.
+Sorting and Ordering: Operations like sorted() allow you to sort elements based on a comparator.
+Parallel Processing: Streams can be easily parallelized, allowing for concurrent processing of data across multiple threads. This can lead to significant performance improvements for large datasets.
+
+Stream API Methods: The Stream API provides a wide range of methods for working with streams, including filter(), map(), flatMap(), reduce(), collect(), forEach(), and many others.
+
+Example:
+
+
+import java.util.stream.*;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        List<String> names = List.of("Alice", "Bob", "Charlie", "Dave", "Eve");
+
+        // Create a stream from the list of names
+        names.stream()
+             .filter(name -> name.length() > 4)  // Intermediate operation: filter names with length > 4
+             .map(String::toUpperCase)          // Intermediate operation: convert names to uppercase
+             .forEach(System.out::println);     // Terminal operation: print the result
+    }
+}
+
+
+
+In this example, a stream is created from a list of names. The stream is then filtered to include only names with a length greater than 4 characters, followed by a mapping operation to convert names to uppercase. Finally, the forEach terminal operation prints each element in the stream.
+
+Streams are a powerful tool for processing collections and performing various data transformations in Java. They encourage a functional programming style and enable concise and expressive code for data processing tasks.

@@ -1,0 +1,89 @@
+USING THREADS
+
+
+Using threads in Java allows you to perform multiple tasks concurrently or in parallel, enhancing the efficiency of your applications, especially in situations where you need to perform tasks simultaneously. To use threads effectively, follow these steps:
+
+Create a Runnable Object:
+
+Start by defining a class that implements the Runnable interface. This interface requires you to override the run() method, where you place the code for the task you want the thread to perform.
+
+public class MyRunnable implements Runnable {
+    @Override
+    public void run() {
+        // Code for the task to be performed by the thread
+    }
+}
+
+
+Create Thread Objects:
+
+Next, create one or more instances of the Thread class and pass your Runnable object as an argument to the Thread constructor.
+
+
+MyRunnable myRunnable = new MyRunnable();
+Thread thread1 = new Thread(myRunnable);
+Thread thread2 = new Thread(myRunnable);
+
+
+Start the Threads:
+
+Use the start() method of the Thread class to initiate the execution of your threads. This method transitions the thread from the "New" state to the "Runnable" state, and the run() method of your Runnable object is executed concurrently.
+
+
+thread1.start();
+thread2.start();
+
+
+Thread Execution:
+
+Each thread will execute the run() method independently. You can have multiple threads performing different tasks concurrently.
+Wait for Threads to Finish (Optional):
+
+If you want to wait for a thread to finish its execution before continuing with the main thread, you can use the join() method. This method waits until the specified thread completes.
+
+
+try {
+    thread1.join();
+    thread2.join();
+} catch (InterruptedException e) {
+    // Handle exceptions
+}
+
+
+Thread Management:
+
+You can manage threads using methods like sleep(), yield(), interrupt(), and setPriority(), as discussed in previous responses.
+Here's a complete example:
+
+
+public class ThreadExample {
+    public static void main(String[] args) {
+        // Create a Runnable object
+        Runnable myRunnable = () -> {
+            for (int i = 1; i <= 5; i++) {
+                System.out.println("Thread " + Thread.currentThread().getId() + ": " + i);
+                try {
+                    Thread.sleep(1000); // Sleep for 1 second
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt(); // Restore interrupted status
+                }
+            }
+        };
+
+        // Create thread objects and start them
+        Thread thread1 = new Thread(myRunnable);
+        Thread thread2 = new Thread(myRunnable);
+        thread1.start();
+        thread2.start();
+
+        // Wait for threads to finish
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            // Handle exceptions
+        }
+
+        System.out.println("Main thread finished.");
+    }
+}

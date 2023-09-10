@@ -1,0 +1,26 @@
+TOKENS
+
+
+In computer programming, "tokens" refer to the smallest individual units or building blocks of a programming language. These tokens are the basic elements that make up a program's source code and are recognized by the language's compiler or interpreter. Tokens represent various parts of the program, such as keywords, identifiers, operators, literals, and punctuation marks. The exact set of tokens and their rules for use depend on the programming language in question. Here are some common types of tokens found in most programming languages:
+
+Keywords (Reserved Words): Keywords are predefined words in the programming language that have special meanings and are reserved for specific purposes. Examples in Java include public, class, if, else, and while.
+
+Identifiers: Identifiers are used to name variables, functions, classes, and other program elements. They typically consist of letters, numbers, and underscores and must follow certain naming rules and conventions defined by the language. Examples: count, calculateTotal, myVariable.
+
+Operators: Operators are symbols or special characters used to perform operations on data. Common operators include arithmetic operators (+, -, *, /), assignment operators (=, +=, -=), comparison operators (==, !=, <, >), and logical operators (&&, ||, !).
+
+Literals: Literals represent constant values within the code. There are different types of literals, including:
+
+Integer literals: Represent whole numbers (e.g., 42, -123).
+Floating-point literals: Represent real numbers with decimal points (e.g., 3.14, -0.001).
+String literals: Represent sequences of characters enclosed in double or single quotes (e.g., "Hello, World!", 'A').
+Boolean literals: Represent the Boolean values true and false.
+Punctuation Marks and Delimiters: These include symbols that provide structure to the code. Examples include parentheses (), braces {}, brackets [], commas ,, semicolons ;, and periods ..
+
+Comments: Comments are not considered part of the executable code but provide information to programmers. In many languages, comments are tokens used to document the code. They are typically ignored by the compiler or interpreter. In Java, for instance, comments are written using // for single-line comments and /* */ for multi-line comments.
+
+Directives (Preprocessor Directives): In some programming languages like C and C++, directives are tokens used to control the behavior of the preprocessor, which processes the code before compilation. Examples include #include and #define.
+
+The process of lexical analysis involves breaking the source code into these individual tokens, which are then processed by the compiler or interpreter to understand the program's structure and semantics. Lexical analysis is the first phase of compilation or interpretation and is essential for parsing and understanding the code correctly.
+
+Different programming languages may have additional types of tokens or variations in token definitions, but the concept of tokens as the basic building blocks of code remains consistent across most languages.

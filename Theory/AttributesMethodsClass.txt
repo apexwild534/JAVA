@@ -1,0 +1,69 @@
+1. Attributes (Fields) in Java:
+
+Attributes in Java are variables that are associated with a class. They represent the characteristics or properties of objects created from that class. These attributes are also known as fields or instance variables. Here are some key points about attributes:
+
+Attributes define the state of an object.
+They are declared within a class but outside of methods.
+Each object created from a class has its own set of attribute values.
+
+
+public class Person {
+    // Attributes (fields)
+    String name;
+    int age;
+}
+
+
+In the Person class above, name and age are attributes.
+
+
+
+ Methods in Java:
+
+Methods in Java are functions defined within a class that perform specific tasks or operations. They define the behavior of objects created from that class. Here are some key points about methods:
+
+Methods define the actions or behaviors of objects.
+They are declared within a class and can have access to the class's attributes.
+Methods can take parameters (inputs) and return values (outputs) if needed.
+
+
+public class Calculator {
+    // Method to add two numbers
+    public int add(int num1, int num2) {
+        return num1 + num2;
+    }
+
+    // Method to subtract two numbers
+    public int subtract(int num1, int num2) {
+        return num1 - num2;
+    }
+}
+
+In the Calculator class above, add and subtract are methods.
+
+Classes in Java:
+
+In Java, a class is a blueprint or template for creating objects. It defines the structure and behavior of objects that will be instantiated from it. Here are some key points about classes:
+
+Classes encapsulate attributes and methods into a single unit.
+You can create multiple objects (instances) from a single class.
+Classes are reusable, allowing you to create objects with similar properties and behaviors.
+
+public class Car {
+    // Attributes (fields)
+    String make;
+    String model;
+    int year;
+
+    // Method to start the car
+    public void start() {
+        System.out.println("Starting the " + year + " " + make + " " + model + " car.");
+    }
+
+    // Method to stop the car
+    public void stop() {
+        System.out.println("Stopping the " + year + " " + make + " " + model + " car.");
+    }
+}
+
+In the Car class above, make, model, year, start(), and stop() define the class's attributes and methods.

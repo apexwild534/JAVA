@@ -1,0 +1,69 @@
+OBJECTS
+
+
+In object-oriented programming (OOP), "objects" are instances of classes that represent real-world entities or concepts. Objects are the fundamental building blocks of an object-oriented system and are used to model and manipulate data and behavior in a program. Here are key concepts related to objects:
+
+Classes and Objects:
+
+Classes: In OOP, classes are blueprint templates that define the structure and behavior of objects. They specify the attributes (also called fields or properties) and methods (functions) that objects of the class will have. Classes serve as the blueprint for creating objects.
+Objects: Objects are instances of classes. They are concrete entities created based on the class definition. Each object has its own set of attributes and can perform actions defined by the class's methods.
+Attributes (Fields):
+
+Attributes, also known as fields or properties, are data members of a class that store the state or characteristics of objects. For example, a Person class may have attributes like name, age, and address.
+Methods:
+
+Methods are functions defined within a class that represent the behaviors or actions an object can perform. For example, a Car class may have methods like start(), stop(), and accelerate().
+Encapsulation:
+
+Encapsulation is one of the core principles of OOP that promotes the bundling of data (attributes) and methods that operate on that data into a single unit called a class. It also involves controlling access to the internal state of objects using access modifiers (e.g., public, private).
+Inheritance:
+
+Inheritance is a mechanism that allows one class (subclass or derived class) to inherit attributes and methods from another class (superclass or base class). It promotes code reuse and the creation of class hierarchies.
+Polymorphism:
+
+Polymorphism allows objects of different classes to be treated as objects of a common superclass. It enables method overriding, where a subclass provides a specific implementation of a method defined in its superclass.
+Abstraction:
+
+Abstraction involves simplifying complex systems by breaking them into smaller, manageable parts. In OOP, classes and objects represent abstractions of real-world entities, focusing on the essential characteristics and behaviors.
+Instantiation:
+
+Instantiation is the process of creating an object from a class. It involves allocating memory for the object and initializing its attributes. The new keyword is commonly used for instantiation in many programming languages.
+State and Behavior:
+
+Objects have both state (attributes) and behavior (methods). The state represents the current data or properties of the object, while behavior defines the actions it can perform.
+Identity:
+
+Each object has a unique identity that distinguishes it from other objects. Identity is often represented by a memory address or a reference.
+Here's a simple example in Java that demonstrates the concept of objects:
+
+
+
+public class Person {
+    // Attributes
+    private String name;
+    private int age;
+
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method
+    public void greet() {
+        System.out.println("Hello, my name is " + name + " and I am " + age + " years old.");
+    }
+
+    public static void main(String[] args) {
+        // Creating objects
+        Person person1 = new Person("Alice", 30);
+        Person person2 = new Person("Bob", 25);
+
+        // Calling object methods
+        person1.greet();
+        person2.greet();
+    }
+}
+
+
+In this example, we define a Person class with attributes (name and age), a constructor to initialize objects, and a greet() method to display a greeting message. We create two Person objects (person1 and person2) and call their greet() methods to demonstrate the use of objects and their behavior.

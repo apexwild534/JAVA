@@ -1,0 +1,51 @@
+READER CLASS
+
+
+In Java, the Reader class is an abstract class that serves as the foundation for reading character-based data from various input sources. It is part of the Java I/O (Input/Output) classes and is used for reading text data from different sources, such as files, input streams, or character arrays. The Reader class and its subclasses provide methods for reading characters and lines of text.
+
+Key points about the Reader class and its usage:
+
+Abstract Class: Reader is an abstract class, which means you cannot create instances of it directly. Instead, you use its concrete subclasses for specific input sources.
+
+Character-Oriented: Reader is designed for reading character data, making it suitable for reading text files and textual data from other sources.
+
+Reading Methods: Reader defines several methods for reading characters, including:
+
+int read(): Reads a single character as an integer (Unicode code point) or returns -1 if the end of the stream has been reached.
+int read(char[] cbuf): Reads characters into a character array and returns the number of characters read.
+int read(char[] cbuf, int off, int len): Reads characters into a portion of a character array, starting at the specified offset and reading up to the specified length.
+boolean ready(): Checks if the reader is ready to be read without blocking.
+void close(): Closes the reader, releasing any system resources associated with it.
+
+Concrete Subclasses: Java provides several concrete subclasses of Reader to read data from various sources, including:
+
+FileReader: Reads characters from a file.
+StringReader: Reads characters from a string.
+InputStreamReader: Reads characters from an input stream, converting bytes to characters using a specified character encoding.
+BufferedReader: Wraps another Reader to provide buffering, improving reading performance.
+Exception Handling: Reading from a Reader can throw IOException (a checked exception), so it's important to handle or propagate exceptions when using Reader classes.
+
+Here's a simple example of reading characters from a file using a FileReader:
+
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+
+public class FileReaderExample {
+    public static void main(String[] args) {
+        try (Reader reader = new FileReader("example.txt")) {
+            int data;
+            while ((data = reader.read()) != -1) {
+                char character = (char) data;
+                System.out.print(character);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+In this example, we create a FileReader to read characters from the "example.txt" file. We use a while loop to read characters one by one until the end of the file is reached.
+
+The Reader class and its subclasses are essential for reading textual data from various sources in Java, and they provide a flexible and efficient way to work with character data.

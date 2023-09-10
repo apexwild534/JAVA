@@ -1,0 +1,48 @@
+Final
+
+
+
+Final Variables:
+
+When you declare a variable as final, you indicate that its value cannot be changed once it's assigned. This is useful when you want to create constants or ensure that a variable remains constant within a method or class.
+
+
+
+Final Methods:
+
+When you declare a method as final in a class, it means that this method cannot be overridden by subclasses. This is often used when you want to prevent further modification of a specific behavior provided by a method.
+
+
+
+Final Classes:
+
+When you declare a class as final, it means that the class cannot be subclassed. This is used when you want to prevent the extension of a class, typically because you consider it complete and don't want it to be altered.
+
+
+
+
+
+Final Parameters:
+
+When you declare a method parameter as final, it indicates that the parameter cannot be modified within the method. This can help ensure that a parameter's value remains constant during the method's execution.
+
+
+
+Final Fields (Instance Variables):
+
+When you declare an instance variable as final, it means that the variable must be initialized when an object of the class is created, and its value cannot be changed after initialization.
+
+
+
+Final Fields (Static Variables):
+
+When you declare a static variable as final, it becomes a constant that cannot be changed. Static final variables are typically used for constants that are shared among all instances of a class.
+
+
+Final Arrays:
+
+When you declare an array as final, it means that the array reference cannot be changed to point to a different array, but the elements within the array can still be modified.
+
+
+
+In summary, the final keyword in Java is used to indicate immutability, whether for variables, methods, classes, or fields. It helps make code more robust, maintainable, and reliable by preventing unintended changes or modifications.

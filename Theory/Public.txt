@@ -1,0 +1,64 @@
+PUBLIC
+
+
+In Java, the public access modifier is one of the four main access modifiers used to control the visibility and accessibility of class members (fields and methods). When a member is marked as public, it has the broadest visibility and can be accessed from anywhere in the program, including other packages. Here are the key characteristics and use cases of public access:
+
+Visibility Everywhere:
+
+public members are visible to all classes and methods, regardless of whether they are in the same package or a different package. This means that public members can be accessed from any part of the program.
+
+Encapsulation Trade-off:
+
+While public members provide maximum visibility, they come at the cost of encapsulation. With public members, the internal details of a class are exposed, potentially allowing unrestricted access and modification. This can make it harder to maintain and control the behavior of a class.
+
+Use Cases:
+
+The public access modifier is typically used for members that need to be accessible from outside the class or from any part of the program. Some common use cases include:
+Public methods that provide the primary interface to a class.
+Constants or fields that are intended to be accessed directly.
+Enum values, which are implicitly public, as they are constants.
+
+
+Example:
+
+public class Rectangle {
+    public double width; // Public field
+    public double height; // Public field
+
+    // Public constructor
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    // Public method
+    public double calculateArea() {
+        return width * height;
+    }
+}
+
+
+In this example, the Rectangle class has public fields (width and height), a public constructor, and a public method (calculateArea()). These members are accessible from any part of the program.
+
+Access from Other Classes:
+
+When you have a public class or method, you can create objects of that class and call its public methods from other classes.
+
+
+public class Main {
+    public static void main(String[] args) {
+        Rectangle rectangle = new Rectangle(5.0, 10.0);
+        double area = rectangle.calculateArea();
+        System.out.println("Area: " + area);
+    }
+}
+
+
+In this example, the Rectangle class and its calculateArea() method are accessible from the Main class, which is in a different file.
+
+Accessing public Members from Other Packages:
+
+When accessing public members from another package, you need to import the class or reference the fully qualified class name.
+
+
+Use the public access modifier when you want to expose certain members of a class to the outside world, allowing them to be accessed and used from anywhere in the program. However, be mindful of the trade-off between visibility and encapsulation, and only make members public when it is necessary for the intended use cases.

@@ -1,0 +1,53 @@
+Input Stream
+
+
+In Java, an input stream is a fundamental abstraction provided by the java.io package that allows you to read data from various input sources, such as files, network connections, or in-memory data. Input streams provide a consistent way to access and read data, regardless of the source.
+
+The key characteristics and concepts related to input streams in Java include:
+
+InputStream Class: InputStream is an abstract class in the java.io package, which serves as the base class for all input stream classes. It defines several methods for reading data, including read(), read(byte[]), and read(byte[], int, int).
+
+Subclasses of InputStream: Java provides various concrete subclasses of InputStream for reading data from specific sources. Some common subclasses include:
+
+FileInputStream: Reads data from a file.
+ByteArrayInputStream: Reads data from an in-memory byte array.
+BufferedInputStream: Wraps another InputStream to provide buffered reading, improving performance.
+DataInputStream: Reads primitive data types (e.g., int, float) from an underlying stream.
+ObjectInputStream: Reads Java objects from an underlying stream, often used for deserialization.
+Reading Data: You can use methods like read(), read(byte[]), and read(byte[], int, int) to read data from the input stream. These methods return the read data or the number of bytes read.
+
+
+InputStream inputStream = new FileInputStream("example.txt");
+int byteRead;
+while ((byteRead = inputStream.read()) != -1) {
+    // Process the byte read
+}
+inputStream.close();
+
+
+Closing the Stream: It's important to close the input stream using the close() method when you're done with it to release system resources. Failing to close a stream can lead to resource leaks.
+
+
+inputStream.close();
+
+
+Exception Handling: Reading from an input stream can throw IOException (a checked exception), so it's essential to handle potential exceptions using try-catch blocks or propagate them to the calling method.
+
+
+try {
+    // Read from the input stream
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+Buffering: For improved performance, especially when reading from slow or network sources, you can wrap an input stream in a BufferedInputStream. This class uses an internal buffer to reduce the number of direct read operations from the source.
+
+
+InputStream inputStream = new FileInputStream("largefile.txt");
+BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+
+
+
+Input streams are a fundamental part of Java I/O and are used extensively when dealing with data input from various sources. They provide a unified way to read data regardless of the source, making it easier to work with files, network sockets, and other input channels in a consistent manner.
+

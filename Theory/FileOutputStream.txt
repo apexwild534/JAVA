@@ -1,0 +1,91 @@
+File Output Stream
+
+
+
+In Java, FileOutputStream is a class provided by the java.io package that allows you to write binary data to a file. It's part of the output stream classes and is commonly used for tasks such as writing binary files, saving images, creating log files, and more.
+
+Here's how you can use FileOutputStream to write data to a file:
+
+Import the Required Class:
+Import the FileOutputStream class at the beginning of your Java file.
+
+
+
+import java.io.FileOutputStream;
+
+
+
+
+Create a FileOutputStream Object:
+Create an instance of the FileOutputStream class and pass the file's path as a parameter to the constructor. You can also specify whether you want to append data to an existing file or overwrite it by using the appropriate constructor.
+
+
+try (FileOutputStream outputStream = new FileOutputStream("output.txt")) {
+    // File writing code
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+To append data to an existing file, you can use the constructor with an additional boolean parameter set to true.
+
+
+try (FileOutputStream outputStream = new FileOutputStream("existingfile.txt", true)) {
+    // Appending data to the existing file
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+
+Write Data to the File:
+You can write data to the file using various methods provided by FileOutputStream. Some commonly used methods include:
+
+void write(int byte): Writes a single byte to the file.
+
+void write(byte[] buffer): Writes the entire contents of the byte array to the file.
+
+void write(byte[] buffer, int offset, int length): Writes a portion of the byte array starting from the offset and up to the specified length to the file.
+
+Here's an example of writing data to a file using FileOutputStream:
+
+
+try (FileOutputStream outputStream = new FileOutputStream("output.txt")) {
+    String data = "Hello, World!";
+    byte[] bytes = data.getBytes();
+    outputStream.write(bytes);
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+
+Close the FileOutputStream:
+It's essential to close the FileOutputStream when you're done with it to ensure that all data is flushed to the file and to release system resources. You can use the try-with-resources statement to automatically close the stream when the block is exited.
+
+
+
+try (FileOutputStream outputStream = new FileOutputStream("output.txt")) {
+    // File writing code
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+
+Remember to handle potential exceptions, such as IOException, which can occur during file operations. Additionally, you can wrap FileOutputStream in a BufferedOutputStream for more efficient writing when dealing with larger files.
+
+
+try (FileOutputStream fileOutputStream = new FileOutputStream("largefile.bin");
+     BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream)) {
+    // Write data to the buffered output stream
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+FileOutputStream is suitable for writing binary data to files. If you need to write text data to a file, you can use FileWriter in combination with BufferedWriter for more convenient text handling.
+
+
+
+

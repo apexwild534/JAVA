@@ -1,0 +1,21 @@
+AWT
+
+AWT (Abstract Window Toolkit) is a graphical user interface (GUI) library in Java. It provides a set of classes and methods for creating and managing graphical user interfaces in Java applications. AWT was one of the first GUI libraries available for Java and is part of the Java Standard Library.
+
+Here are some key points about AWT:
+
+Components: AWT provides a variety of GUI components, including buttons, labels, text fields, checkboxes, and more. These components are represented by classes such as Button, Label, TextField, Checkbox, etc.
+
+Layout Managers: AWT includes layout managers that help arrange GUI components within containers, such as FlowLayout, BorderLayout, GridLayout, and GridBagLayout. These layout managers control the positioning and sizing of components.
+
+Event Handling: AWT supports event-driven programming, allowing you to define event listeners to respond to user actions, such as button clicks, mouse events, and keyboard input. Event handling is done through interfaces like ActionListener, MouseListener, and KeyListener.
+
+Graphics and Drawing: AWT provides classes for drawing and rendering graphics, such as Graphics and Graphics2D. You can use these classes to create custom graphics, draw shapes, and render text.
+
+Containers: AWT includes container classes like Frame, Window, and Panel for organizing and managing GUI components. A Frame is the top-level window in an AWT application.
+
+Platform-Dependent: AWT components are rendered using native platform libraries, which means that the appearance and behavior of AWT components can vary across different operating systems.
+
+Lightweight and Heavyweight Components: AWT components can be categorized as lightweight and heavyweight. Lightweight components are platform-independent and are drawn using Java code. Heavyweight components are platform-dependent and are based on native operating system controls.
+
+While AWT provides a basic set of GUI components and features, it has certain limitations and is considered somewhat dated. Many Java developers prefer to use Swing or JavaFX for more modern and feature-rich GUI development. However, AWT is still available in Java and can be useful for simpler GUI applications or when working in environments with specific requirements.

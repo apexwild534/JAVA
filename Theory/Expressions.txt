@@ -1,0 +1,38 @@
+EXPRSSIONS
+
+
+In computer programming, an "expression" is a combination of values, variables, operators, and function calls that can be evaluated to produce a single value. Expressions are a fundamental part of programming languages and are used to perform calculations, make decisions, and manipulate data. Here are some key aspects of expressions:
+
+Components of Expressions:
+
+Values: These can be literals (e.g., numbers or strings) or variables (e.g., data stored in memory).
+Operators: These are symbols or keywords that perform operations on values. Common operators include arithmetic operators (+, -, *, /), comparison operators (==, !=, <, >), and logical operators (&&, ||, !).
+Function Calls: Expressions can include function calls that take input values (arguments) and return a result. For example, in many programming languages, Math.sqrt(16) is an expression that calls the sqrt function to calculate the square root of 16.
+Evaluation: When an expression is encountered in a program, it is evaluated by the programming language's interpreter or compiler. The evaluation process involves calculating the result of the expression according to the defined operators and rules.
+
+Data Types: The data type of an expression's result is determined by the values and operators used in the expression. For example, an expression involving only integers will typically result in an integer value, while an expression involving a mix of integers and floating-point numbers may result in a floating-point value.
+
+Assignment Expressions: In many programming languages, expressions can be used to assign a value to a variable. For example, x = 10 is an assignment expression that assigns the value 10 to the variable x. The right-hand side of the assignment is also an expression.
+
+Compound Expressions: Expressions can be combined to form more complex expressions. For example, x + y is an expression that combines the variables x and y using the addition operator.
+
+Conditional Expressions: Conditional expressions, often referred to as "ternary expressions," allow you to express conditional logic in a concise way. For example, result = (x > y) ? "x is greater" : "y is greater" assigns one of two values to result based on the condition (x > y).
+
+Side Effects: Some expressions may have side effects, which means they not only produce a result but also modify the state of the program. For example, an expression that includes a function call to print a message to the console has the side effect of producing output.
+
+Order of Evaluation: In complex expressions, the order in which subexpressions are evaluated can affect the result. Most programming languages have well-defined rules for the order of evaluation, but it's important to be aware of potential issues like operator precedence and associativity.
+
+Pure Expressions: A "pure expression" is an expression that, given the same input values, always produces the same result and has no side effects. Pure expressions are a key concept in functional programming and are preferred for many programming tasks due to their predictability and ease of reasoning.
+
+Here are some examples of expressions in various programming languages:
+
+In Python: 3 + 4, len("Hello"), x > 5 and y <= 10
+In JavaScript: x * y, Math.sqrt(25), condition ? trueValue : falseValue
+In Java: x + y, Math.pow(2, 3), x > 0 ? "Positive" : "Negative"
+In C++: a / b, std::string("Hello, ") + name, (x > y) ? x : y
+Expressions play a crucial role in programming by allowing you to perform calculations, make decisions, and manipulate data to achieve specific tasks in your code. Understanding how to create and evaluate expressions is fundamental to writing effective programs.
+
+
+
+
+

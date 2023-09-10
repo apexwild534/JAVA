@@ -1,0 +1,44 @@
+PRIVATE
+
+
+In Java, the private access modifier is one of the four main access modifiers used to control the visibility and accessibility of classes, methods, and variables within a class. When a member (field or method) of a class is marked as private, it means that the member is only accessible within the same class and cannot be accessed from outside the class. Here are the key characteristics and use cases of private access:
+
+Visibility Restriction:
+
+Members (fields and methods) marked as private are hidden from all other classes, even subclasses, and other packages. They are accessible only within the same class in which they are defined.
+
+Encapsulation:
+
+private access is a fundamental concept in encapsulation, which is one of the core principles of object-oriented programming (OOP). Encapsulation restricts direct access to an object's internal state and behavior and provides controlled access through methods.
+
+Data Hiding:
+
+By marking fields as private, you hide the internal data of an object from external classes, preventing unauthorized or unintended modifications. This helps maintain the integrity of the object's state.
+
+Controlled Access:
+
+Access to private members is controlled through public methods (getters and setters) defined within the class. These methods allow you to enforce business logic, data validation, and access control.
+
+Getter and Setter Methods:
+
+Getter methods (also known as accessor methods) are public methods used to retrieve the values of private fields.
+Setter methods (also known as mutator methods) are public methods used to modify the values of private fields, often with validation checks.
+Example:
+
+public class Person {
+    private String name; // Private field
+
+    public String getName() { // Getter method
+        return name;
+    }
+
+    public void setName(String newName) { // Setter method
+        // Perform validation if needed
+        name = newName;
+    }
+}
+
+
+In the example above, the name field is marked as private to prevent direct access from outside the Person class. Instead, access to the name field is controlled through the getName() and setName() methods, which provide a way to read and modify the name field while enforcing any necessary validation or business logic.
+
+The use of the private access modifier is crucial for maintaining the encapsulation and integrity of class data and behavior. It helps ensure that the internal state of an object is manipulated only in a controlled and safe manner, reducing the risk of unintended side effects and bugs.
